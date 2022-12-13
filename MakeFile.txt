@@ -1,0 +1,8 @@
+all: mymalloc.o
+	gcc -g -Wall -Wvla -fsanitize=address mymalloc.o -o mymalloc
+
+mymalloc.o: mymalloc.c mymalloc.h
+	gcc -g -Wall -Wvla -fsanitize=address -c mymalloc.c
+
+clean:
+	rm *.o mymalloc
